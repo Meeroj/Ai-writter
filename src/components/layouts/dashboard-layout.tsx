@@ -11,13 +11,13 @@ export default function DashboardLayout() {
     toggleSidebar();
   };
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex overflow-hidden">
       <span className="hidden md:block">
         <Sidebar />
       </span>
 
       {sidebarOpen && (
-        <div className={`absolute md:hidden bg-white`}>
+        <div className={`absolut md:hidden bg-white`}>
           <div
             className="absolute h-screen w-screen z-10 bg-white bg-opacity-45 backdrop-blur-sm bg-white/30 top-0"
             onClick={handleOverlayClick}

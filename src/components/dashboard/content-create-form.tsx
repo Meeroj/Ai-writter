@@ -1,6 +1,6 @@
 import { Input } from '@/components/ui/input.tsx';
 import { Button } from '@/components/ui/button.tsx';
-import { Loader2 } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import { TContentCreateRequestParam } from '@/shared/types/content-create-request-param.ts';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -14,6 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form.tsx';
+import { Textarea } from '../ui/textarea';
 
 type ContentCreateFormProps = {
   isLoading: boolean;
@@ -72,7 +73,8 @@ export default function ContentCreateForm({
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Input
+                <Textarea
+                  rows={5}
                   placeholder="Write about ReactJS form validation. Provide a real life examples"
                   {...field}
                 />
@@ -85,7 +87,7 @@ export default function ContentCreateForm({
           )}
         />
         <Button disabled={isLoading}>
-          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading && <Loader className="mr-2 h-4 w-4 animate-spin" />}
           Generate
         </Button>
       </form>

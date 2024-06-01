@@ -1,6 +1,7 @@
 import { Loader, PlusCircle } from 'lucide-react';
 import PromptHistory from './prompt-history';
 import { useContentContext } from '@/contexts/content.context';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   const { generatingContent, getPromptHistory } = useContentContext();
@@ -13,7 +14,9 @@ export default function Sidebar() {
           {generatingContent ? (
             <Loader className="h-6 w-6 animate-spin" />
           ) : (
-            <PlusCircle />
+            <Link to={'/dashboard'}>
+              <PlusCircle />
+            </Link>
           )}
         </button>
       </div>
