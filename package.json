@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
@@ -17,16 +18,20 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@sentry/react": "^7.108.0",
     "@uiw/react-md-editor": "^4.0.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
+    "i18next": "^23.10.1",
+    "i18next-browser-languagedetector": "^7.2.0",
     "lucide-react": "^0.356.0",
     "openai": "^4.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
     "react-hot-toast": "^2.4.1",
+    "react-i18next": "^14.1.0",
     "react-router-dom": "^6.22.3",
     "react-use": "^17.5.0",
     "tailwind-merge": "^2.2.1",
@@ -35,6 +40,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
     "@types/node": "^20.11.27",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
@@ -48,10 +56,12 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "jsdom": "^24.0.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "vitest": "^1.4.0"
   }
 }

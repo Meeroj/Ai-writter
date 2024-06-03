@@ -1,6 +1,6 @@
 import { Input } from '@/components/ui/input.tsx';
 import { Button } from '@/components/ui/button.tsx';
-import { Loader } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { TContentCreateRequestParam } from '@/shared/types/content-create-request-param.ts';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -14,7 +14,8 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form.tsx';
-import { Textarea } from '../ui/textarea';
+import { Textarea } from '@/components/ui/textarea.tsx';
+import { useTranslation } from 'react-i18next';
 
 type ContentCreateFormProps = {
   isLoading: boolean;
@@ -30,6 +31,7 @@ export default function ContentCreateForm({
   isLoading,
   onSubmit,
 }: ContentCreateFormProps) {
+  const { t } = useTranslation('dashboard');
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,13 +56,11 @@ export default function ContentCreateForm({
           disabled={isLoading}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>{t('title')}</FormLabel>
               <FormControl>
                 <Input placeholder="ReactJS" {...field} />
               </FormControl>
-              <FormDescription>
-                Please, provide a title for your content.
-              </FormDescription>
+              <FormDescription>{t('titleHint')}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -71,24 +71,22 @@ export default function ContentCreateForm({
           disabled={isLoading}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>{t('description')}</FormLabel>
               <FormControl>
                 <Textarea
+                  placeholder={t('descriptionPlaceholder')}
                   rows={5}
-                  placeholder="Write about ReactJS form validation. Provide a real life examples"
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                Please, provide a description for your content.
-              </FormDescription>
+              <FormDescription>{t('descriptionHint')}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button disabled={isLoading}>
-          {isLoading && <Loader className="mr-2 h-4 w-4 animate-spin" />}
-          Generate
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {t('generate')}
         </Button>
       </form>
     </Form>
