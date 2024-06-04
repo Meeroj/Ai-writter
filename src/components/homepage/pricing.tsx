@@ -3,6 +3,7 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/components/ui/button.tsx';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const includedFeatures = [
   'Private forum access',
@@ -12,31 +13,29 @@ const includedFeatures = [
 ];
 
 export default function Pricing() {
+  const { t } = useTranslation('homePage');
   return (
     <div className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Simple no-tricks pricing
+            {t('pricing.title')}
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
-            quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+            {t('pricing.subtitle')}
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-2xl font-bold tracking-tight text-gray-900">
-              Lifetime membership
+              {t('pricing.card.title')}
             </h3>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque
-              amet indis perferendis blanditiis repellendus etur quidem
-              assumenda.
+              {t('pricing.card.subtitle')}
             </p>
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-black">
-                What’s included
+                {t('pricing.card.included.title')}
               </h4>
               <div className="h-px flex-auto bg-gray-100" />
             </div>
@@ -59,7 +58,7 @@ export default function Pricing() {
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto max-w-xs px-8">
                 <p className="text-base font-semibold text-gray-600">
-                  Pay once, own it forever
+                  {t('pricing.card.included.payTime')}
                 </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
@@ -70,10 +69,12 @@ export default function Pricing() {
                   </span>
                 </p>
                 <Link to="/auth/register">
-                  <Button className="mt-4">Get access</Button>
+                  <Button className="mt-4">
+                    {t('pricing.card.included.button')}
+                  </Button>
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
+                  {t('pricing.card.included.payTimeSubtitle')}
                 </p>
               </div>
             </div>
