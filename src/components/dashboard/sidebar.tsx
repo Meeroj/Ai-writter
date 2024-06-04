@@ -1,7 +1,7 @@
 import PromptHistory from '@/components/dashboard/prompt-history.tsx';
 import { PencilSquareIcon } from '@heroicons/react/16/solid';
 import { useAppContext } from '@/contexts/app.context.tsx';
-import { Loader2 } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useContentContext } from '@/contexts/content.context.tsx';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ export default function Sidebar() {
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">{t('logo')}</h1>
         {generatingContent ? (
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          <Loader className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Link to="/dashboard">
             <PencilSquareIcon className="w-6 h-6" />
