@@ -20,6 +20,7 @@ import { AuthProvider } from '@/contexts/auth.context.tsx';
 import Login from '@/components/auth/login.tsx';
 import ProtectedRoute from '@/components/auth/protected-route.tsx';
 import Homepage from '@/pages/homepage.tsx';
+import { Analytics } from '@vercel/analytics/react';
 
 import './i18n.ts';
 import './sentry.ts';
